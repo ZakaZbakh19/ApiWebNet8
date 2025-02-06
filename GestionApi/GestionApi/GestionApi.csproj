@@ -20,7 +20,6 @@
     <Folder Include="Common\Mappers\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Dtos\" />
-    <Folder Include="Repository\Interfaces\" />
     <Folder Include="Service\Interfaces\" />
   </ItemGroup>
 
