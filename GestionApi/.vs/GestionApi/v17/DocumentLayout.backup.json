@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\migrations\\20250206143727_addcartstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\migrations\\20250206143816_updatecartstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\migrations\\20250206143816_updatecartstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\models\\carts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\models\\carts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -91,20 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20250206143816_UpdateCartsTable.cs",
-              "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Migrations\\20250206143816_UpdateCartsTable.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Migrations\\20250206143816_UpdateCartsTable.cs",
-              "ToolTip": "D:\\Projects\\GestionApi\\GestionApi\\Migrations\\20250206143816_UpdateCartsTable.cs",
-              "RelativeToolTip": "GestionApi\\Migrations\\20250206143816_UpdateCartsTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T14:40:35.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Program.cs",
               "RelativeDocumentMoniker": "GestionApi\\Program.cs",
@@ -117,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Carts.cs",
               "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Models\\Carts.cs",
               "RelativeDocumentMoniker": "GestionApi\\Models\\Carts.cs",
@@ -130,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ApplicationDBContext.cs",
               "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
               "RelativeDocumentMoniker": "GestionApi\\Data\\ApplicationDBContext.cs",

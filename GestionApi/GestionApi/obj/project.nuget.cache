@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y8Nol7mjnKw=",
+  "dgSpecHash": "oAYD8NO0ghE=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\GestionApi\\GestionApi\\GestionApi.csproj",
+  "projectFilePath": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\GestionApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zaka-\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\zaka-\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
