@@ -83,3 +83,6 @@ GestionApi/GestionApi/obj/Debug/net8.0/refint/GestionApi.dll
 GestionApi/GestionApi/obj/GestionApi.csproj.nuget.dgspec.json
 GestionApi/GestionApi/obj/project.assets.json
 GestionApi/GestionApi/obj/project.nuget.cache
+*.dll
+*.exe
+*.vsidx

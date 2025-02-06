@@ -11,5 +11,12 @@ namespace GestionApi.Data
         }
 
         public DbSet<Carts> Carts { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Carts>()
+                .Property(u => u.Name)
+                .IsRequired(); // Forzará NOT NULL
+        }
     }
 }

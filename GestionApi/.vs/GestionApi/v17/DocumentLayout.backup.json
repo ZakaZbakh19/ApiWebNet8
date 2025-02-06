@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\GestionApi\\",
+  "WorkspaceRootPath": "D:\\Projects\\ApiWebNet8\\GestionApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\migrations\\20250206143727_addcartstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\migrations\\20250206143727_addcartstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\models\\carts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\models\\carts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\models\\carts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\gestionapi\\gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,26 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250206143727_AddCartsTable.cs",
-              "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Migrations\\20250206143727_AddCartsTable.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Migrations\\20250206143727_AddCartsTable.cs",
-              "ToolTip": "D:\\Projects\\GestionApi\\GestionApi\\Migrations\\20250206143727_AddCartsTable.cs",
-              "RelativeToolTip": "GestionApi\\Migrations\\20250206143727_AddCartsTable.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T14:40:36.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Program.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs",
               "RelativeDocumentMoniker": "GestionApi\\Program.cs",
-              "ToolTip": "D:\\Projects\\GestionApi\\GestionApi\\Program.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs",
               "RelativeToolTip": "GestionApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T14:31:25.081Z",
               "EditorCaption": ""
@@ -102,9 +85,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Carts.cs",
-              "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Models\\Carts.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Models\\Carts.cs",
               "RelativeDocumentMoniker": "GestionApi\\Models\\Carts.cs",
-              "ToolTip": "D:\\Projects\\GestionApi\\GestionApi\\Models\\Carts.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Models\\Carts.cs",
               "RelativeToolTip": "GestionApi\\Models\\Carts.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -113,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "D:\\Projects\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
               "RelativeDocumentMoniker": "GestionApi\\Data\\ApplicationDBContext.cs",
-              "ToolTip": "D:\\Projects\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
               "RelativeToolTip": "GestionApi\\Data\\ApplicationDBContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T14:23:16.35Z",
               "EditorCaption": ""
