@@ -104,3 +104,6 @@ GestionApi/GestionApi/obj/Debug/net8.0/GestionApi.AssemblyInfo.cs
 GestionApi/GestionApi/obj/Debug/net8.0/GestionApi.AssemblyInfoInputs.cache
 *.db
 GestionApi/.vs/GestionApi/CopilotIndices/17.12.38.29086/CodeChunks.db
+GestionApi/.vs/GestionApi/CopilotIndices/17.12.38.29086/CodeChunks.db
+/GestionApi/.vs/GestionApi/CopilotIndices
+*.json
