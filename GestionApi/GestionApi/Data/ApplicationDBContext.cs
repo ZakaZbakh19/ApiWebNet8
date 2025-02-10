@@ -10,11 +10,11 @@ namespace GestionApi.Data
         {
         }
 
-        public DbSet<Carts> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Carts>()
+            modelBuilder.Entity<Order>()
                 .Property(u => u.Name)
                 .IsRequired(); // Forzará NOT NULL
         }
