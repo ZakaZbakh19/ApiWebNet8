@@ -16,17 +16,18 @@ namespace GestionApi.Repository
             _context = context;
         }
 
-        public async Task<bool> AddAsync<T>(T entity) where T : BaseModel
+        public async Task<T?> AddAsync<T>(T entity) where T : BaseModel
         {
             var _dbSet = _context.Set<T>();
 
             if(_dbSet == null)
             {
-                return false;
+                return null;
             }
 
-            await _dbSet.AddAsync(entity);
-            return await SaveChanges();
+            var entityAdded = (await _dbSet.AddAsync(entity)).Entity;
+
+            return await SaveChanges() ? entityAdded : null;
         }
 
         public async Task<bool> DeleteAsync<T>(Guid id) where T : BaseModel
@@ -79,24 +80,25 @@ namespace GestionApi.Repository
             return await _dbSet.ToListAsync();
         }
 
-        public async Task<bool> UpdateAsync<T>(T entity) where T : BaseModel
+        public async Task<T?> UpdateAsync<T>(T entity) where T : BaseModel
         {
             var _dbSet = _context.Set<T>();
-            _dbSet.Update(entity);
-            return await SaveChanges();
+
+            var existingEntity = await _dbSet.FindAsync(entity.Id);
+
+            if (existingEntity == null)
+            {
+                return null;
+            }
+
+            _context.Entry(existingEntity).CurrentValues.SetValues(entity);
+
+            return await SaveChanges() ? existingEntity : null;
         }
 
         private async Task<bool> SaveChanges()
         {
-            var result = await _context.SaveChangesAsync();
-            var success = result > 0;
-
-            if (!success)
-            {
-                throw new CustomException(type: TypeException.Repository);
-            }
-                
-            return success;
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

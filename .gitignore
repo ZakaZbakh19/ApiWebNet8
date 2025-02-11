@@ -82,7 +82,9 @@ GestionApi/GestionApi/obj/Debug/net8.0/ref/GestionApi.dll
 GestionApi/GestionApi/obj/Debug/net8.0/refint/GestionApi.dll
 GestionApi/GestionApi/obj/GestionApi.csproj.nuget.dgspec.json
 GestionApi/GestionApi/obj/project.assets.json
-GestionApi/GestionApi/obj/project.nuget.cache
+GestionApi/GestionApi/obj/
+GestionApi/.vs/
+GestionApi/.vs/GestionApi/CopilotIndices/
 *.dll
 *.exe
 *.vsidx
@@ -107,3 +109,4 @@ GestionApi/.vs/GestionApi/CopilotIndices/17.12.38.29086/CodeChunks.db
 GestionApi/.vs/GestionApi/CopilotIndices/17.12.38.29086/CodeChunks.db
 /GestionApi/.vs/GestionApi/CopilotIndices
 *.json
+*.cache

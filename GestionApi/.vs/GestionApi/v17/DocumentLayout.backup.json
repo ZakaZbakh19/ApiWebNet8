@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\ApiWebNet8\\GestionApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\exceptions\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\exceptions\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\gestionapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\gestionapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\middleware\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\middleware\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,40 +67,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomException.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Exceptions\\CustomException.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Exceptions\\CustomException.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Exceptions\\CustomException.cs",
-              "RelativeToolTip": "GestionApi\\Exceptions\\CustomException.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBUAAAAGAAAAAAAAAA==",
+              "Title": "ErrorHandlingMiddleware.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Middleware\\ErrorHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "GestionApi\\Middleware\\ErrorHandlingMiddleware.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Middleware\\ErrorHandlingMiddleware.cs",
+              "RelativeToolTip": "GestionApi\\Middleware\\ErrorHandlingMiddleware.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAxwB0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T11:56:59.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GestionApi.csproj",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\GestionApi.csproj",
-              "RelativeDocumentMoniker": "GestionApi\\GestionApi.csproj",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\GestionApi.csproj",
-              "RelativeToolTip": "GestionApi\\GestionApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-10T11:42:41.428Z",
+              "WhenOpened": "2025-02-10T17:40:30.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Program.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs*",
-              "RelativeToolTip": "GestionApi\\Program.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAawBYAAAAGAAAAAAAAAA==",
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Service\\OrderService.cs",
+              "RelativeDocumentMoniker": "GestionApi\\Service\\OrderService.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Service\\OrderService.cs",
+              "RelativeToolTip": "GestionApi\\Service\\OrderService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwCsAAACEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T10:55:51.404Z",
+              "WhenOpened": "2025-02-10T17:35:59.155Z",
               "EditorCaption": ""
             }
           ]

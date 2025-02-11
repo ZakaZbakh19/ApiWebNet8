@@ -1,4 +1,6 @@
-﻿namespace GestionApi.Middleware
+﻿using GestionApi.Exceptions;
+
+namespace GestionApi.Middleware
 {
     public class ErrorHandlingMiddleware
     {
@@ -18,20 +20,14 @@
                 // Continuar con la solicitud
                 await _next(context);
             }
-            catch (Exception ex)
+            catch (CustomException ex)
             {
                 _logger.LogError(ex, "An unhandled exception occurred at {Time} in {MethodName}. Exception Details: {Message}", DateTime.UtcNow, nameof(InvokeAsync), ex.Message);
 
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "application/json";
 
-                var errorResponse = new
-                {
-                    message = "An unexpected error occurred.",
-                    detail = ex.StackTrace
-                };
-
-                await context.Response.WriteAsJsonAsync(errorResponse);
+                await context.Response.WriteAsJsonAsync(ex);
             }
         }
     }

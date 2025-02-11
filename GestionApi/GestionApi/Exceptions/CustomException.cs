@@ -5,6 +5,10 @@ namespace GestionApi.Exceptions
 {
     public class CustomException : Exception
     {
+        public TypeException TypeException { get; set; }
+        public string CallerName { get; set; }
+        public int ErrorCode { get; set; } = 500;
+
         public CustomException(string message) : base(message)
         {
         }
@@ -13,9 +17,10 @@ namespace GestionApi.Exceptions
         {
         }
 
-        public CustomException(TypeException type = TypeException.Default ,[CallerMemberName] string message = "", Exception innerException = null) : base($"[{type}] {message}")
+        public CustomException(Exception innerException, TypeException type = TypeException.Default, string message = "",[CallerMemberName] string callerName = "", int error = 500) : base(message, innerException)
         {
-
+            TypeException = type;
+            CallerName = callerName;
         }
     }
 }

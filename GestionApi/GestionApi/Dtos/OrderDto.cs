@@ -4,8 +4,10 @@ namespace GestionApi.Dtos
 {
     public class OrderDto
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage = "Order Number is required")]
+        public Guid? Id { get; set; }
         public string OrderNumber { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
