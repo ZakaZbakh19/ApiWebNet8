@@ -293,3 +293,5 @@ D:\Projects\ApiWebNet8\GestionApi\GestionApi\obj\Debug\net8.0\refint\GestionApi.
 D:\Projects\ApiWebNet8\GestionApi\GestionApi\obj\Debug\net8.0\GestionApi.pdb
 D:\Projects\ApiWebNet8\GestionApi\GestionApi\obj\Debug\net8.0\GestionApi.genruntimeconfig.cache
 D:\Projects\ApiWebNet8\GestionApi\GestionApi\obj\Debug\net8.0\ref\GestionApi.dll
+D:\Projects\ApiWebNet8\GestionApi\GestionApi\bin\Debug\net8.0\AutoMapper.dll
+D:\Projects\ApiWebNet8\GestionApi\GestionApi\bin\Debug\net8.0\FluentValidation.dll

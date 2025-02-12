@@ -15,14 +15,11 @@ namespace GestionApi.Service
     public class OrderService : BaseService, IOrderService
     {
         private readonly IBaseRepository _baseRepository;
-        private readonly IValidator<Order> _orderValidator;
         
 
-        public OrderService(IBaseRepository baseRepository, 
-            IValidator<Order> orderValidator, IMapper _mapper) : base(_mapper)
+        public OrderService(IBaseRepository baseRepository, IMapper _mapper) : base(_mapper)
         {
             _baseRepository = baseRepository;
-            _orderValidator = orderValidator;
         }
 
         public async Task<ResultModel<OrderDto>> AddOrderAsync(OrderDto orderDto)
@@ -30,14 +27,7 @@ namespace GestionApi.Service
             //Mapper Dto to Entity
             var entity = GetEntity<Order, OrderDto>(orderDto);
 
-            var result = await _orderValidator.ValidateAsync(entity);
-            if (!result.IsValid)
-            {
-                //Se hace en el controller
-                //result.AddToModelState(ModelState);
-                //return UnprocessableEntity(ModelState);
-                return ResultModel<OrderDto>.Failure(new CustomException("Num repetido"));
-            }
+            entity.OrderNumber =  await GenerateOrderNumberAsync();
 
             var orderAdded = await _baseRepository.AddAsync<Order>(entity);
 
@@ -78,6 +68,13 @@ namespace GestionApi.Service
         public Task<ResultModel<OrderDto>> UpdateOrderAsync(Guid id, Order order)
         {
             throw new NotImplementedException();
+        }
+
+        private async Task<string> GenerateOrderNumberAsync()
+        {
+            var lastOrder = (await _baseRepository.GetAllAsync<Order>(x => int.Parse(x.OrderNumber))).LastOrDefault();
+            var newOrderNumber = int.Parse(lastOrder.OrderNumber) + 1;
+            return newOrderNumber.ToString();
         }
     }
 }

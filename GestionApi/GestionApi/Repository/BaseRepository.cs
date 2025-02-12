@@ -20,7 +20,7 @@ namespace GestionApi.Repository
         {
             var _dbSet = _context.Set<T>();
 
-            if(_dbSet == null)
+            if (_dbSet == null)
             {
                 return null;
             }
@@ -37,7 +37,7 @@ namespace GestionApi.Repository
             if (id == Guid.Empty)
             {
                 return false;
-            }   
+            }
 
             var commentModel = await _dbSet.FindAsync(id);
 
@@ -74,10 +74,19 @@ namespace GestionApi.Repository
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync<T>() where T : BaseModel
+        public async Task<IEnumerable<T>> GetAllAsync<T>(Expression<Func<T, object>> orderBy = null,
+                    bool ascending = true) where T : BaseModel
         {
-            var _dbSet = _context.Set<T>();
-            return await _dbSet.ToListAsync();
+            var query = _context.Set<T>().AsQueryable();
+
+            if (orderBy != null)
+            {
+                query = ascending
+                    ? query.OrderBy(orderBy) 
+                    : query.OrderByDescending(orderBy);  
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<T?> UpdateAsync<T>(T entity) where T : BaseModel

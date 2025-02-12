@@ -5,7 +5,7 @@ namespace GestionApi.Repository.Interfaces
 {
     public interface IBaseRepository 
     {
-        Task<IEnumerable<T>> GetAllAsync<T>() where T : BaseModel; 
+        Task<IEnumerable<T>> GetAllAsync<T>(Expression<Func<T, object>> orderBy = null, bool ascending = true) where T : BaseModel;
         Task<T> GetByIdAsync<T>(Guid id) where T : BaseModel;
         Task<T?> AddAsync<T>(T entity) where T : BaseModel;
         Task<T?> UpdateAsync<T>(T entity) where T : BaseModel;
