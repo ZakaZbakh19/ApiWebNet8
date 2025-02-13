@@ -1,4 +1,5 @@
-﻿using GestionApi.Exceptions;
+﻿using GestionApi.Data;
+using GestionApi.Exceptions;
 using GestionApi.Exceptions.Types;
 using GestionApi.Models;
 using GestionApi.Repository.Interfaces;
@@ -9,9 +10,9 @@ namespace GestionApi.Repository
 {
     public class BaseRepository : IBaseRepository
     {
-        private readonly DbContext _context;
+        private readonly ApplicationDBContext _context;
 
-        public BaseRepository(DbContext context)
+        public BaseRepository(ApplicationDBContext context)
         {
             _context = context;
         }
@@ -30,35 +31,47 @@ namespace GestionApi.Repository
             return await SaveChanges() ? entityAdded : null;
         }
 
-        public async Task<bool> DeleteAsync<T>(Guid id) where T : BaseModel
+        public async Task<bool> DeleteAsync<T>(Expression<Func<T, bool>>? predicate = null) where T : BaseModel
         {
             var _dbSet = _context.Set<T>();
 
-            if (id == Guid.Empty)
+            if (predicate == null)
             {
                 return false;
             }
 
-            var commentModel = await _dbSet.FindAsync(id);
+            var entity = await _dbSet.FirstOrDefaultAsync(predicate);
 
-            if (commentModel == null)
+            if (entity == null)
             {
                 return false;
             }
 
-            _dbSet.Remove(commentModel);
+            _dbSet.Remove(entity);
             return await SaveChanges();
         }
 
-        public async Task<bool> ExistAsync<T>(Expression<Func<T, bool>> predicate) where T : BaseModel
+        public async Task<bool> ExistAsync<T>(Expression<Func<T, bool>>? predicate = null) where T : BaseModel
         {
             var _dbSet = _context.Set<T>();
+
+            if(predicate == null)
+            {
+                return false;
+            }
+
             return await _dbSet.AnyAsync(predicate);
         }
 
-        public async Task<T?> GetByFuncAsync<T>(Expression<Func<T, bool>> predicate) where T : BaseModel
+        public async Task<T?> GetByFuncAsync<T>(Expression<Func<T, bool>>? predicate = null) where T : BaseModel
         {
             var _dbSet = _context.Set<T>();
+
+            if (predicate == null)
+            {
+                return null;
+            }
+
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
@@ -74,19 +87,9 @@ namespace GestionApi.Repository
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync<T>(Expression<Func<T, object>> orderBy = null,
-                    bool ascending = true) where T : BaseModel
+        public async Task<IEnumerable<T>> GetAllAsync<T>() where T : BaseModel
         {
-            var query = _context.Set<T>().AsQueryable();
-
-            if (orderBy != null)
-            {
-                query = ascending
-                    ? query.OrderBy(orderBy) 
-                    : query.OrderByDescending(orderBy);  
-            }
-
-            return await query.ToListAsync();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public async Task<T?> UpdateAsync<T>(T entity) where T : BaseModel

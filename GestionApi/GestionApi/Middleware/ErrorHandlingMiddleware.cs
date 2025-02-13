@@ -29,6 +29,12 @@ namespace GestionApi.Middleware
 
                 await context.Response.WriteAsJsonAsync(ex);
             }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An unhandled exception occurred at {Time} in {MethodName}. Exception Details: {Message}", DateTime.UtcNow, nameof(InvokeAsync), e.Message);
+                context.Response.StatusCode = 500;
+                context.Response.ContentType = "application/json";
+            }
         }
     }
 }

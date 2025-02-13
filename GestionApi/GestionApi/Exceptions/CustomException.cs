@@ -21,6 +21,7 @@ namespace GestionApi.Exceptions
         {
             TypeException = type;
             CallerName = callerName;
+            ErrorCode = error;
         }
     }
 }

@@ -7,6 +7,7 @@ using GestionApi.Repository.Interfaces;
 using GestionApi.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace GestionApi.Controllers
 {
@@ -15,34 +16,85 @@ namespace GestionApi.Controllers
     public class OrdersController : ControllerBase
     {
         private readonly IOrderService _orderService;
-        private readonly IValidator<OrderDto> _orderValidator;
+        private readonly IValidator<OrderBaseDto> _orderValidator;
+        private readonly IValidator<OrderQuery> _orderQueryValidator;
 
         public OrdersController(IOrderService orderService,
-            IValidator<OrderDto> validator)
+            IValidator<OrderBaseDto> validator, IValidator<OrderQuery> orderQueryValidator)
         {
             _orderService = orderService;
             _orderValidator = validator;
+            _orderQueryValidator = orderQueryValidator;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public IActionResult Get()
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetAllOrder()
         {
-            return Ok("Orders");
+            var result = await _orderService.GetOrdersAsync();
+
+            if (!result.Success)
+            {
+                return StatusCode(result.Exception.ErrorCode, result);
+            }
+
+            return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetOrderById([FromQuery] Guid id)
         {
-            return Ok($"Order {id}");
+            var validation = _orderQueryValidator.Validate(new OrderQuery() { Id = id });
+
+            if (!validation.IsValid)
+            {
+                validation.AddToModelState(ModelState);
+                return UnprocessableEntity(ModelState);
+            }
+
+            var result = await _orderService.GetOrderByIdAsync(id);
+
+            if (!result.Success)
+            {
+                return StatusCode(result.Exception.ErrorCode, result);
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetOrder([FromQuery] OrderQuery query)
+        {
+            var validation = _orderQueryValidator.Validate(query);
+
+            if (!validation.IsValid)
+            {
+                validation.AddToModelState(ModelState);
+                return UnprocessableEntity(ModelState);
+            }
+
+            var result = await _orderService.GetOrderAsync(query);
+
+            if (!result.Success)
+            {
+                return StatusCode(result.Exception.ErrorCode, result);
+            }
+
+            return Ok(result);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
-        public async Task<IActionResult> Post([FromBody] OrderDto orderDto)
+        public async Task<IActionResult> CreateOrder([FromBody] CreateOrderDto orderDto)
         {
             var validationResult = await _orderValidator.ValidateAsync(orderDto);
 
@@ -63,16 +115,53 @@ namespace GestionApi.Controllers
         }
 
 
-        [HttpPut("{id}")]
-        public IActionResult Put(int id)
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
+        public async Task<IActionResult> Put([FromBody] OrderDto orderDto)
         {
-            return Ok($"Order {id} updated");
+            var validation = _orderValidator.Validate(orderDto);
+
+            if (!validation.IsValid)
+            {
+                validation.AddToModelState(ModelState);
+                return UnprocessableEntity(ModelState);
+            }
+
+            var result = await _orderService.UpdateOrderAsync(orderDto);
+
+            if (!result.Success)
+            {
+                return StatusCode(result.Exception.ErrorCode, result);
+            }
+
+            return Ok(result);
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> Delete([FromQuery] OrderQuery query)
         {
-            return Ok($"Order {id} deleted");
+            var validation = _orderQueryValidator.Validate(query);
+
+            if (!validation.IsValid)
+            {
+                validation.AddToModelState(ModelState);
+                return UnprocessableEntity(ModelState);
+            }
+
+            var result = await _orderService.DeleteOrderAsync(query);
+
+            if (!result.Success)
+            {
+                return StatusCode(result.Exception.ErrorCode, result);
+            }
+
+            return Ok(result);
         }
     }
 }

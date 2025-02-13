@@ -19,10 +19,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Mappers\" />
-  </ItemGroup>
-
   <PropertyGroup Condition="'$(cONFIGURATICopnfiguration)'=='Production'">
     <DefineConstants>PRO</DefineConstants>
   </PropertyGroup>

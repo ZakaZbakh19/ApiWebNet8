@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\ApiWebNet8\\GestionApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\service\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\validators\\orderqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|solutionrelative:gestionapi\\validators\\orderqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{065C55ED-CB5E-49F8-A47C-631DC4A006E4}|GestionApi\\GestionApi.csproj|d:\\projects\\apiwebnet8\\gestionapi\\gestionapi\\validators\\orderdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 13,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDtoValidator.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderDtoValidator.cs",
+              "RelativeDocumentMoniker": "GestionApi\\Validators\\OrderDtoValidator.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderDtoValidator.cs",
+              "RelativeToolTip": "GestionApi\\Validators\\OrderDtoValidator.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T09:50:27.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderQueryValidator.cs",
+              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderQueryValidator.cs",
+              "RelativeDocumentMoniker": "GestionApi\\Validators\\OrderQueryValidator.cs",
+              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderQueryValidator.cs",
+              "RelativeToolTip": "GestionApi\\Validators\\OrderQueryValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T09:50:26.66Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -87,92 +97,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Models\\Order.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Models\\Order.cs",
-              "RelativeToolTip": "GestionApi\\Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T16:08:29.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\appsettings.json",
-              "RelativeDocumentMoniker": "GestionApi\\appsettings.json",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\appsettings.json",
-              "RelativeToolTip": "GestionApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-12T16:00:23.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDBContext.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Data\\ApplicationDBContext.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Data\\ApplicationDBContext.cs",
-              "RelativeToolTip": "GestionApi\\Data\\ApplicationDBContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T15:56:43.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Program.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Program.cs",
-              "RelativeToolTip": "GestionApi\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T15:49:23.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "GestionApi\\Controllers\\OrdersController.cs",
               "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Controllers\\OrdersController.cs",
               "RelativeToolTip": "GestionApi\\Controllers\\OrdersController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwAAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwHcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T14:30:58.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Service\\OrderService.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Service\\OrderService.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Service\\OrderService.cs",
-              "RelativeToolTip": "GestionApi\\Service\\OrderService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T10:32:50.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderDtoValidator.cs",
-              "DocumentMoniker": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderDtoValidator.cs",
-              "RelativeDocumentMoniker": "GestionApi\\Validators\\OrderDtoValidator.cs",
-              "ToolTip": "D:\\Projects\\ApiWebNet8\\GestionApi\\GestionApi\\Validators\\OrderDtoValidator.cs",
-              "RelativeToolTip": "GestionApi\\Validators\\OrderDtoValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T10:31:54.786Z",
+              "WhenOpened": "2025-02-12T16:28:35.6Z",
               "EditorCaption": ""
             }
           ]

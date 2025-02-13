@@ -4,9 +4,9 @@ namespace GestionApi.Models
 {
     public class Order : BaseModel
     {
-        public string OrderNumber { get; set; } = string.Empty;
+        public long OrderNumber { get; set; }
         public string Name { get; set; } = string.Empty;
-        public int Description { get; set; }
+        public string Description { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
     }
 }

@@ -7,12 +7,12 @@ namespace GestionApi.Service.Interfaces
 {
     public interface IOrderService
     {
-        Task<ResultModel<OrderDto>> AddOrderAsync(OrderDto order);
+        Task<ResultModel<OrderDto>> AddOrderAsync(CreateOrderDto orderDto);
         Task<ResultModel<IEnumerable<OrderDto>>> GetOrdersAsync();
         Task<ResultModel<OrderDto>> GetOrderByIdAsync(Guid id);
-        Task<ResultModel<OrderDto>> GetOrderAsync(Expression<Func<OrderDto, bool>> predicate);
-        Task<ResultModel<OrderDto>> UpdateOrderAsync(Guid id, Order order);
-        Task<ResultModel<bool>> DeleteOrderAsync(Guid id);
-        Task<ResultModel<bool>> ExistOrderAsync(Guid id);
+        Task<ResultModel<OrderDto>> GetOrderAsync(OrderQuery query = null);
+        Task<ResultModel<OrderDto>> UpdateOrderAsync(OrderDto orderDto);
+        Task<ResultModel<bool>> DeleteOrderAsync(OrderQuery query = null);
+        Task<bool> ExistOrderAsync(OrderQuery query = null);
     }
 }

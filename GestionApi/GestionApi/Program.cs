@@ -26,9 +26,10 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 
 builder.Services.AddScoped<IBaseRepository, BaseRepository>();
 
-builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IValidator<OrderBaseDto>, OrderDtoValidator>();
+builder.Services.AddScoped<IValidator<OrderQuery>, OrderQueryValidator>();
 
-builder.Services.AddScoped<IValidator<OrderDto>, OrderDtoValidator>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 List<Profile> mapperProfiles = new List<Profile> { new MapperProfile() };
 builder.Services.AddSingleton(new MapperConfiguration(mc => mc.AddProfiles(mapperProfiles)).CreateMapper());
