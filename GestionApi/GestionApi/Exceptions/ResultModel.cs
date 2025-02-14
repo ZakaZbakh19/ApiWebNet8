@@ -6,9 +6,9 @@
         public bool Success { get; set; }
         public CustomException Exception { get; set; }
 
-        public static ResultModel<T> SuccessResult(T data, CustomException customException = null)
+        public static ResultModel<T> SuccessResult(T data)
         {
-            return new ResultModel<T> { Success = true, Data = data, Exception = customException };
+            return new ResultModel<T> { Success = true, Data = data , Exception = ExceptionsBuilder.OKException()};
         }
 
         public static ResultModel<T> Failure(CustomException customException = null)

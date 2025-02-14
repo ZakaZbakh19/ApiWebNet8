@@ -12,6 +12,7 @@ using GestionApi.Service.Interfaces;
 using GestionApi.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Serilog;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,15 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Seq("http://localhost:5341")
+    .CreateLogger();
+
+builder.Host.UseSerilog(Log.Logger);
+
+Log.Information("Starting up application");
 
 builder.Services.AddScoped<IBaseRepository, BaseRepository>();
 
@@ -43,6 +53,8 @@ var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
+app.UseMiddleware<LogRequestsMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -56,4 +68,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception e)
+{
+    Log.Error(e, "An error occurred.");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

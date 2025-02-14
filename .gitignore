@@ -43,3 +43,6 @@ publish/
 # Other
 .vs/
 .vs2019/
+GestionApi/.vs
+GestionApi/GestionApi/bin
+GestionApi/GestionApi/obj

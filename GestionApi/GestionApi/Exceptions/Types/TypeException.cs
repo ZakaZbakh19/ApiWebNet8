@@ -3,10 +3,10 @@
     public enum TypeException
     {
         Default,
-        Service,
-        Repository,
-        Controller,
-        Middleware,
-        Filter
+        Server,
+        ExistEntity,
+        NotFound,
+        NoContent,
+        OK,
     }
 }

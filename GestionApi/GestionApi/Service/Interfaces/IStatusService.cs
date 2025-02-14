@@ -1,0 +1,3 @@
+﻿namespace GestionApi.Service.Interfaces
+{
+}

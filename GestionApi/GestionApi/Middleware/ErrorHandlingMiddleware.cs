@@ -22,18 +22,30 @@ namespace GestionApi.Middleware
             }
             catch (CustomException ex)
             {
-                _logger.LogError(ex, "An unhandled exception occurred at {Time} in {MethodName}. Exception Details: {Message}", DateTime.UtcNow, nameof(InvokeAsync), ex.Message);
+                _logger.LogError(
+                    "Custom exception occurred in {Method} method with status code {StatusCode}. Error Message: {ErrorMessage}",
+                    context.Request.Method,
+                    ex.ErrorCode,
+                    ex.Message
+                );
 
-                context.Response.StatusCode = 500;
+                context.Response.StatusCode = ex.ErrorCode;
                 context.Response.ContentType = "application/json";
-
-                await context.Response.WriteAsJsonAsync(ex);
+                await context.Response.WriteAsJsonAsync(ex.Message);
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "An unhandled exception occurred at {Time} in {MethodName}. Exception Details: {Message}", DateTime.UtcNow, nameof(InvokeAsync), e.Message);
+                _logger.LogError(
+                    "An unexpected error occurred in {Method} method. Status code {StatusCode}. Error Message: {ErrorMessage}",
+                    context.Request.Method,
+                    500,
+                    e.Message
+                );
+
                 context.Response.StatusCode = 500;
                 context.Response.ContentType = "application/json";
+                await context.Response.WriteAsJsonAsync(e.Message);
+
             }
         }
     }

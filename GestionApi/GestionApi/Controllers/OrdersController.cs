@@ -18,13 +18,16 @@ namespace GestionApi.Controllers
         private readonly IOrderService _orderService;
         private readonly IValidator<OrderBaseDto> _orderValidator;
         private readonly IValidator<OrderQuery> _orderQueryValidator;
+        ILogger<OrdersController> _logger;
 
         public OrdersController(IOrderService orderService,
-            IValidator<OrderBaseDto> validator, IValidator<OrderQuery> orderQueryValidator)
+            IValidator<OrderBaseDto> validator, IValidator<OrderQuery> orderQueryValidator,
+            ILogger<OrdersController> logger)
         {
             _orderService = orderService;
             _orderValidator = validator;
             _orderQueryValidator = orderQueryValidator;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -42,16 +45,18 @@ namespace GestionApi.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetOrderById([FromQuery] Guid id)
+        public async Task<IActionResult> GetOrderById([FromRoute] Guid id)
         {
-            var validation = _orderQueryValidator.Validate(new OrderQuery() { Id = id });
+            _logger.LogInformation("Validation started - {RequestName} with {id}", nameof(GetOrderById), id);
+            var validation = await _orderQueryValidator.ValidateAsync(new OrderQuery() { Id = id });
 
             if (!validation.IsValid)
             {
+                _logger.LogError("Validation failed - {RequestName} with {id}", nameof(GetOrderById), id);
                 validation.AddToModelState(ModelState);
                 return UnprocessableEntity(ModelState);
             }
@@ -66,16 +71,18 @@ namespace GestionApi.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("search")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetOrder([FromQuery] OrderQuery query)
         {
-            var validation = _orderQueryValidator.Validate(query);
+            _logger.LogInformation("Validation started - {RequestName} with {OrderQuery}", nameof(GetOrder), query);
+            var validation = await _orderQueryValidator.ValidateAsync(query);
 
             if (!validation.IsValid)
             {
+                _logger.LogError("Validation failed - {RequestName} with {OrderQuery}", nameof(GetOrder), query);
                 validation.AddToModelState(ModelState);
                 return UnprocessableEntity(ModelState);
             }
@@ -96,10 +103,12 @@ namespace GestionApi.Controllers
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         public async Task<IActionResult> CreateOrder([FromBody] CreateOrderDto orderDto)
         {
+            _logger.LogInformation("Validation started - {RequestName} with {CreateOrderDto}", nameof(CreateOrder), orderDto);
             var validationResult = await _orderValidator.ValidateAsync(orderDto);
 
             if (!validationResult.IsValid)
             {
+                _logger.LogError("Validation failed - {RequestName} with {CreateOrderDto}", nameof(CreateOrder), orderDto);
                 validationResult.AddToModelState(ModelState);
                 return UnprocessableEntity(ModelState);
             }
@@ -117,15 +126,17 @@ namespace GestionApi.Controllers
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
-        public async Task<IActionResult> Put([FromBody] OrderDto orderDto)
+        public async Task<IActionResult> UpdateOrder([FromBody] OrderDto orderDto)
         {
-            var validation = _orderValidator.Validate(orderDto);
+            _logger.LogInformation("Validation started - {RequestName} with {OrderDto}", nameof(UpdateOrder), orderDto);
+            var validation = await _orderValidator.ValidateAsync(orderDto);
 
             if (!validation.IsValid)
             {
+                _logger.LogError("Validation failed - {RequestName} with {OrderDto}", nameof(UpdateOrder), orderDto);
                 validation.AddToModelState(ModelState);
                 return UnprocessableEntity(ModelState);
             }
@@ -144,12 +155,14 @@ namespace GestionApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> Delete([FromQuery] OrderQuery query)
+        public async Task<IActionResult> DeleteOrder([FromQuery] OrderQuery query)
         {
-            var validation = _orderQueryValidator.Validate(query);
+            _logger.LogInformation("Validation started - {RequestName} with {OrderQuery}", nameof(DeleteOrder), query);
+            var validation = await _orderQueryValidator.ValidateAsync(query);
 
             if (!validation.IsValid)
             {
+                _logger.LogError("Validation failed - {RequestName} with {OrderQuery}", nameof(DeleteOrder), query);
                 validation.AddToModelState(ModelState);
                 return UnprocessableEntity(ModelState);
             }
